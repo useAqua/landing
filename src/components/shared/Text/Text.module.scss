@@ -1,0 +1,28 @@
+@import '@/styles/variables';
+@import '@/styles/utils';
+
+.base {
+  font-size: vw(16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: vw(-0.64px);
+
+  @include breakpoint-max('phone') {
+    font-size: 16px;
+    letter-spacing: -0.64px;
+  }
+
+  @include breakpoint-min('large') {
+    font-size: 21px;
+    letter-spacing: -0.85px;
+  }
+
+  &.text-400 {
+    font-weight: 400;
+  }
+
+  &.text-500 {
+    font-weight: 500;
+  }
+}

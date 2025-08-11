@@ -1,0 +1,173 @@
+@import '@/styles/variables';
+@import '@/styles/utils';
+
+.base {
+  padding: vw(342px) 0 vw(40px);
+  overflow: hidden;
+  position: relative;
+
+  @include breakpoint-max('phone') {
+    padding: 208px 0 26px;
+  }
+
+  @include breakpoint-min('large') {
+    padding: 456px 0 53px;
+  }
+}
+
+.title {
+  left: 50%;
+  position: absolute;
+  top: vw(50px);
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+  gap: vw(40px);
+
+  @include breakpoint-max('phone') {
+    gap: 20px;
+    top: 60px;
+  }
+
+  @include breakpoint-min('large') {
+    top: 66px;
+    gap: 53px;
+  }
+}
+
+.word {
+  font-family: $redaction;
+  font-size: vw(240px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 96.5%;
+  letter-spacing: vw(-9.6px);
+  color: #e9e7d4;
+
+  @include breakpoint-max('phone') {
+    letter-spacing: -4px;
+    font-size: 100px;
+  }
+
+  @include breakpoint-min('large') {
+    font-size: 320px;
+    letter-spacing: -13.3px;
+  }
+
+  &:nth-child(2) {
+    color: #01387c;
+  }
+}
+
+.row {
+  padding: vw(32px) 0 0;
+  border-top: vw(1px) solid #dcdcdc;
+
+  @include breakpoint-max('phone') {
+    border-top-width: 1px;
+    padding: 32px 0 0;
+  }
+
+  @include breakpoint-min('large') {
+    padding: 43px 0 0;
+    border-top: 1.33px;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: vw(24px);
+
+  @include breakpoint-max('phone') {
+    grid-template-columns: 100%;
+    gap: 16px;
+  }
+
+  @include breakpoint-min('large') {
+    gap: 24px;
+  }
+}
+
+.copyright {
+  margin: 0;
+  color: #01387c;
+
+  @include breakpoint-max('phone') {
+    order: 1;
+    text-align: center;
+  }
+}
+
+.socials {
+  display: flex;
+  gap: vw(16px) vw(32px);
+  flex-wrap: wrap;
+
+  @include breakpoint-max('phone') {
+    order: -1;
+    justify-content: center;
+    margin-bottom: 16px;
+    gap: 16px 32px;
+  }
+
+  @include breakpoint-min('large') {
+    gap: 21px 42px;
+  }
+}
+
+.link {
+  text-decoration: underline solid rgba(0, 0, 0, 0) 1px;
+  text-underline-offset: vw(2px);
+  color: #01387c;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: vw(2px);
+    bottom: 0;
+    left: 0;
+    background-color: #01387c;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+
+    @include breakpoint-max('phone') {
+      height: 2px;
+    }
+
+    @include breakpoint-min('large') {
+      height: 3px;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  @include hover {
+    &:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+
+  &:active {
+    color: #032753;
+  }
+}
+
+.author {
+  text-align: right;
+  color: #01387c;
+  margin: 0;
+
+  @include breakpoint-max('phone') {
+    text-align: center;
+  }
+}

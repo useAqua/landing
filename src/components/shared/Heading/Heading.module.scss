@@ -1,0 +1,111 @@
+@import '@/styles/variables';
+@import '@/styles/utils';
+
+.heading1,
+.heading2,
+.heading3,
+.heading4,
+.heading5 {
+  font-style: normal;
+  font-family: $bricolage;
+  font-weight: 400;
+
+  b {
+    font-weight: inherit;
+    font-style: italic;
+    font-family: $redaction;
+  }
+}
+
+.heading1 {
+  font-size: vw(72px);
+  line-height: 108%;
+  letter-spacing: vw(-2.16px);
+
+  @include breakpoint-max('phone') {
+    font-size: 46px;
+    letter-spacing: -1.38px;
+  }
+
+  @include breakpoint-min('large') {
+    font-size: 96px;
+    letter-spacing: -2.88px;
+  }
+}
+
+.heading2 {
+  font-size: vw(60px);
+  line-height: 110%;
+  letter-spacing: vw(-1.8px);
+
+  @include breakpoint-max('phone') {
+    font-size: 40px;
+    letter-spacing: -1.2px;
+  }
+
+  @include breakpoint-min('large') {
+    font-size: 80px;
+    letter-spacing: -2.4px;
+  }
+}
+
+.heading3 {
+  font-size: vw(48px);
+  line-height: 112.5%;
+  letter-spacing: vw(-1.44px);
+
+  @include breakpoint-max('phone') {
+    font-size: 36px;
+    letter-spacing: -1.08px;
+  }
+
+  @include breakpoint-min('large') {
+    font-size: 64px;
+    letter-spacing: -1.92px;
+  }
+}
+
+.heading4 {
+  font-size: vw(40px);
+  line-height: 120%;
+  letter-spacing: vw(-1.2px);
+
+  @include breakpoint-max('phone') {
+    font-size: 36px;
+    letter-spacing: -1.08px;
+  }
+
+  @include breakpoint-min('large') {
+    font-size: 54px;
+    letter-spacing: -1.6px;
+  }
+}
+
+.heading5 {
+  font-size: vw(32px);
+  line-height: 112.5%;
+  letter-spacing: vw(-0.96px);
+
+  @include breakpoint-max('phone') {
+    font-size: 22px;
+    letter-spacing: -0.66px;
+  }
+
+  @include breakpoint-min('large') {
+    font-size: 43px;
+    letter-spacing: -1.28px;
+  }
+
+  @include breakpoint-min('phone') {
+    b {
+      font-size: vw(34px);
+      line-height: 105%;
+      letter-spacing: vw(-1.02px);
+
+      @include breakpoint-min('large') {
+        font-size: 46px;
+        letter-spacing: -1.4px;
+      }
+    }
+  }
+}

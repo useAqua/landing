@@ -1,0 +1,219 @@
+@import '@/styles/variables';
+@import '@/styles/utils';
+
+.base {
+  padding: vw(80px) 0;
+
+  @include breakpoint-max('phone') {
+    padding: 60px 0;
+  }
+
+  @include breakpoint-min('large') {
+    padding: 133px 0;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin: 0 0 vw(20px);
+  text-align: center;
+  color: #01387c;
+
+  @include breakpoint-max('phone') {
+    width: 327px;
+    max-width: 100%;
+    margin: 0 auto 16px;
+  }
+
+  @include breakpoint-min('large') {
+    margin-bottom: 27px;
+  }
+}
+
+.text {
+  margin: 0 auto vw(48px);
+  width: vw(701px);
+  max-width: 100%;
+  text-align: center;
+  color: #01387c;
+
+  @include breakpoint-max('phone') {
+    width: 355px;
+    margin-bottom: 32px;
+  }
+
+  @include breakpoint-min('large') {
+    margin-bottom: 64px;
+    width: 935px;
+  }
+}
+
+.list {
+  width: vw(650px);
+  max-width: 100%;
+  margin: 0 auto vw(48px);
+  display: grid;
+  grid-template-columns: 100%;
+  gap: vw(11px);
+
+  @include breakpoint-max('phone') {
+    margin-bottom: 40px;
+    gap: 8px;
+    width: 650px;
+  }
+
+  @include breakpoint-min('large') {
+    gap: 15px;
+    width: 867px;
+    margin-bottom: 64px;
+  }
+}
+
+.item {
+  position: relative;
+  padding: vw(28px) vw(80px) vw(28px) vw(90px);
+  border-radius: vw(44px);
+  border: vw(1px) solid #01387c;
+  color: #01387c;
+  text-decoration: none;
+  font-size: vw(20px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: vw(-0.8px);
+  transition:
+    background 0.5s ease-out,
+    color 0.5s ease-out;
+
+  @include breakpoint-max('phone') {
+    padding: 22px 48px 22px 74px;
+    font-size: 16px;
+    border-radius: 44px;
+    letter-spacing: -0.8px;
+  }
+
+  @include breakpoint-min('large') {
+    padding: 37px 100px 37px 120px;
+    font-size: 27px;
+    border-width: 1.33px;
+    border-radius: 59px;
+    letter-spacing: -1px;
+  }
+
+  &:nth-child(1) .icon svg {
+    width: vw(19px);
+    height: vw(31px);
+
+    @include breakpoint-min('large') {
+      width: 26px;
+      height: 42px;
+    }
+
+    @include breakpoint-max('phone') {
+      width: 19px;
+      height: 31px;
+    }
+  }
+
+  &:nth-child(2) .icon svg {
+    width: vw(28px);
+    height: vw(28px);
+
+    @include breakpoint-max('phone') {
+      width: 28px;
+      height: 28px;
+    }
+
+    @include breakpoint-min('large') {
+      width: 38px;
+      height: 38px;
+    }
+  }
+
+  &:nth-child(3) .icon svg {
+    width: vw(31px);
+    height: vw(27px);
+
+    @include breakpoint-max('phone') {
+      width: 31px;
+      height: 27px;
+    }
+
+    @include breakpoint-min('large') {
+      width: 41px;
+      height: 36px;
+    }
+  }
+}
+
+.icon {
+  position: absolute;
+  width: vw(64px);
+  height: vw(64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #01387c;
+  color: #faf8e9;
+  left: vw(10px);
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  transition:
+    background 0.5s ease-out,
+    color 0.5s ease-out;
+
+  @include breakpoint-min('large') {
+    width: 85px;
+    height: 85px;
+    left: 13px;
+  }
+
+  @include breakpoint-max('phone') {
+    width: 56px;
+    height: 56px;
+    left: 6px;
+
+    > svg {
+      transform: scale(0.8);
+    }
+  }
+}
+
+.arrow {
+  position: absolute;
+  right: vw(40px);
+  top: 50%;
+  width: vw(20px);
+  height: vw(20px);
+  transform: translateY(-50%);
+
+  @include breakpoint-max('phone') {
+    right: 30px;
+    width: 16px;
+    height: 16px;
+  }
+
+  @include breakpoint-min('large') {
+    width: 25px;
+    height: 25px;
+    right: 53px;
+  }
+}
+
+.item {
+  @include hover {
+    background: #01387c;
+    color: #faf8e9;
+
+    .icon {
+      background: #faf8e9;
+      color: #01387c;
+    }
+  }
+}

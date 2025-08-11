@@ -1,0 +1,65 @@
+@import '@/styles/variables';
+@import '@/styles/utils';
+
+.base {
+  padding: vw(166px) vw(60px) vw(188px);
+  border-radius: vw(64px);
+  background: #01387c;
+  position: relative;
+  overflow: hidden;
+
+  @include breakpoint-max('phone') {
+    padding: 48px 24px 274px;
+    border-radius: 44px;
+  }
+
+  @include breakpoint-min('large') {
+    padding: 220px 80px 250px;
+    border-radius: 86px;
+  }
+}
+
+.image {
+  position: absolute;
+  left: vw(600px);
+  width: vw(668px);
+  height: vw(343px);
+  top: 50%;
+  transform: translateY(-50%);
+
+  @include breakpoint-max('phone') {
+    width: 320px;
+    height: 179px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: auto;
+    bottom: 47px;
+  }
+
+  @include breakpoint-min('large') {
+    width: 886px;
+    height: 458px;
+    left: 800px;
+  }
+}
+
+.title {
+  margin: 0;
+  color: #faf8e9;
+}
+
+.text {
+  max-width: vw(370px);
+  margin: vw(20px) 0 vw(40px);
+  color: #faf8e9;
+
+  @include breakpoint-max('phone') {
+    margin: 16px 0 40px;
+    max-width: 370px;
+  }
+
+  @include breakpoint-min('large') {
+    margin: 26px 0 54px;
+    max-width: 490px;
+  }
+}

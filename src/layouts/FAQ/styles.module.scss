@@ -1,0 +1,191 @@
+@import '@/styles/variables';
+@import '@/styles/utils';
+
+.base {
+  padding: vw(150px) 0;
+
+  @include breakpoint-max('phone') {
+    padding: 120px 0 60px;
+  }
+
+  @include breakpoint-min('large') {
+    padding: 200px 0;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0 0 vw(48px);
+  text-align: center;
+
+  @include breakpoint-max('phone') {
+    margin-bottom: 32px;
+  }
+
+  @include breakpoint-min('large') {
+    margin-bottom: 64px;
+  }
+}
+
+.item {
+  width: vw(650px);
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: vw(44px);
+  border: vw(1px) solid #01387c;
+
+  @include breakpoint-max('phone') {
+    width: 650px;
+    border-radius: 44px;
+    border-width: 1px;
+  }
+
+  @include breakpoint-min('large') {
+    width: 867px;
+    border-width: 1.33px;
+    border-radius: 59px;
+  }
+
+  + .item {
+    margin-top: vw(12px);
+
+    @include breakpoint-max('phone') {
+      margin-top: 12px;
+    }
+
+    @include breakpoint-min('large') {
+      margin-top: 16px;
+    }
+  }
+}
+
+.header {
+  margin: 0;
+}
+
+.trigger {
+  width: 100%;
+  padding: vw(32px) vw(64px) vw(32px) vw(36px);
+  position: relative;
+  color: #01387c;
+  background: none;
+  border: none;
+  box-shadow: none;
+  text-align: left;
+  cursor: pointer;
+  transition: padding-bottom 0.2s;
+  will-change: padding-bottom;
+
+  @include breakpoint-max('phone') {
+    padding: 24px 80px 24px 24px;
+  }
+
+  @include breakpoint-min('large') {
+    padding: 43px 120px 43px 48px;
+  }
+
+  h5 {
+    margin: 0;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: vw(29px);
+    height: vw(29px);
+    right: vw(44px);
+    top: 50%;
+    transform: translateY(-50%);
+    background: url("data:image/svg+xml,%3Csvg width='29' height='29' viewBox='0 0 29 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.1138 27.0971V0.000543072' stroke='%2301387C' stroke-width='2.5'/%3E%3Cpath d='M25.4033 13.5488C23.7724 13.5487 22.1575 13.8992 20.6507 14.58C19.1439 15.2609 17.7749 16.2589 16.6217 17.517C15.4684 18.775 14.5536 20.2686 13.9294 21.9124C13.3054 23.5561 12.9841 25.3179 12.9841 27.097L15.1149 27.097C15.1149 25.6231 15.3811 24.1636 15.8981 22.8019C16.4151 21.4402 17.173 20.2029 18.1284 19.1607C19.0837 18.1184 20.2179 17.2917 21.4661 16.7276C22.7144 16.1636 24.0522 15.8733 25.4033 15.8733L25.4033 13.5488Z' fill='%2301387C'/%3E%3Cpath d='M2.82151 13.5498C4.45244 13.5499 6.0674 13.9003 7.5741 14.5812C9.08089 15.262 10.45 16.26 11.6032 17.518C12.7564 18.7761 13.6712 20.2697 14.2953 21.9134C14.9195 23.5571 15.2408 25.3189 15.2407 27.0982L13.0731 27.0981C13.0731 25.6295 12.8079 24.1752 12.2928 22.8183C11.7776 21.4615 11.0224 20.2286 10.0705 19.1901C9.11849 18.1516 7.98836 17.3279 6.74462 16.7657C5.50089 16.2038 4.16775 15.9146 2.82151 15.9145L2.82151 13.5498Z' fill='%2301387C'/%3E%3C/svg%3E%0A")
+      center / 100% auto no-repeat;
+    transition: transform 0.2s;
+
+    @include breakpoint-max('phone') {
+      width: 20px;
+      height: 20px;
+      right: 28px;
+    }
+
+    @include breakpoint-min('large') {
+      width: 38px;
+      height: 38px;
+      right: 53px;
+    }
+  }
+
+  &[data-state='open'] {
+    padding-bottom: vw(16px);
+
+    @include breakpoint-max('phone') {
+      padding-bottom: 16px;
+    }
+
+    @include breakpoint-min('large') {
+      padding-bottom: 21px;
+    }
+
+    &:after {
+      transform: translateY(-50%) scale(1, -1);
+    }
+  }
+}
+
+.content {
+  color: #01387c;
+  overflow: hidden;
+  padding: 0 vw(36px);
+
+  @include breakpoint-max('phone') {
+    padding: 0 24px;
+  }
+
+  @include breakpoint-min('large') {
+    padding: 0 48px;
+  }
+
+  p {
+    display: block;
+    margin: 0;
+    padding: 0 0 vw(32px);
+    max-width: vw(470px);
+
+    @include breakpoint-max('phone') {
+      padding-bottom: 24px;
+      max-width: 470px;
+    }
+
+    @include breakpoint-min('large') {
+      padding-bottom: 43px;
+      max-width: 628px;
+    }
+  }
+
+  &[data-state='open'] {
+    animation: slideDown 300ms ease-out;
+  }
+  &[data-state='closed'] {
+    animation: slideUp 300ms ease-out;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}

@@ -1,0 +1,35 @@
+{
+	"name": "aqua-landing",
+	"version": "0.1.1",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"format": "prettier --write \"**/*.{ts,tsx,md,scss}\""
+	},
+	"dependencies": {
+		"@radix-ui/react-accordion": "^1.2.11",
+		"classnames": "^2.5.1",
+		"next": "14.2.4",
+		"normalize.css": "^8.0.1",
+		"react": "^18.3.1",
+		"react-dom": "^18",
+		"react-scroll": "^1.9.3",
+		"usehooks-ts": "^3.1.0"
+	},
+	"devDependencies": {
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"@types/react-scroll": "^1.8.10",
+		"eslint": "^8",
+		"eslint-config-next": "14.2.4",
+		"prettier": "^3.3.3",
+		"sass": "^1.77.8",
+		"sharp": "^0.33.4",
+		"typescript": "^5"
+	},
+	"packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f"
+}

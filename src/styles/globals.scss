@@ -1,0 +1,39 @@
+@import '@/styles/variables';
+@import '@/styles/utils';
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  word-break: break-word;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-size: vw(16px);
+  font-family: $inter;
+  background: #faf8e9;
+  color: #01387c;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  @include breakpoint-min('large') {
+    font-size: 21.33px;
+  }
+
+  @include breakpoint-max('phone') {
+    font-size: 16px;
+  }
+}
+
+body {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}

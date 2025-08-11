@@ -1,0 +1,208 @@
+@import '@/styles/variables';
+@import '@/styles/utils';
+
+.base {
+  padding: vw(80px) 0 vw(147px);
+  overflow: hidden;
+
+  @include breakpoint-max('phone') {
+    padding: 60px 0 120px;
+  }
+
+  @include breakpoint-min('large') {
+    padding: 133px 0 196px;
+  }
+}
+
+.title {
+  margin: 0 0 vw(48px);
+  text-align: center;
+
+  @include breakpoint-max('phone') {
+    margin-bottom: 32px;
+  }
+
+  @include breakpoint-min('large') {
+    margin-bottom: 64px;
+  }
+}
+
+.list {
+  width: vw(875px);
+  margin: 0 auto;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  gap: vw(20px);
+
+  @include breakpoint-max('phone') {
+    gap: 12px;
+    width: 100%;
+  }
+
+  @include breakpoint-min('large') {
+    width: 1165px;
+    gap: 27px;
+  }
+}
+
+.item {
+  border-radius: vw(44px);
+  background: #fff;
+  box-shadow: 0 vw(20px) vw(80px) 0 rgba(0, 0, 0, 0.03);
+  position: relative;
+  padding: vw(110px) vw(48px) vw(48px) vw(48px);
+  display: flex;
+  flex-direction: column;
+  min-height: vw(340px);
+
+  @include breakpoint-max('phone') {
+    padding: 32px 24px;
+    min-height: 440px;
+    border-radius: 44px;
+    box-shadow: 0 24px 80px 0 rgba(0, 0, 0, 0.03);
+  }
+
+  @include breakpoint-min('large') {
+    border-radius: 59px;
+    box-shadow: 0 26px 107px 0 rgba(0, 0, 0, 0.03);
+    padding: 64px;
+    min-height: 453px;
+  }
+}
+
+.subtitle {
+  margin: auto 0 0;
+  color: #01387c;
+}
+
+.text {
+  margin: vw(16px) 0 0;
+  max-width: vw(450px);
+
+  @include breakpoint-max('phone') {
+    margin-top: 16px;
+    max-width: 450px;
+  }
+
+  @include breakpoint-min('large') {
+    margin-top: 21px;
+    max-width: 595px;
+  }
+}
+
+.count {
+  width: vw(80px);
+  height: vw(80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: vw(10px);
+  top: vw(10px);
+  border-radius: 50%;
+  color: #fff;
+  font-family: $bricolage;
+  font-size: vw(24px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 116%;
+  letter-spacing: vw(-0.96px);
+  background: #01387c;
+
+  @include breakpoint-max('phone') {
+    display: none;
+  }
+
+  @include breakpoint-min('large') {
+    width: 107px;
+    height: 107px;
+    left: 13px;
+    top: 13px;
+    font-size: 32px;
+    letter-spacing: -1.28px;
+  }
+}
+
+.image {
+  position: absolute;
+}
+
+.item {
+  @include breakpoint-max('phone') {
+    .image {
+      left: 50% !important;
+      right: auto !important;
+      transform: translateX(-50%) scale(0.7) !important;
+    }
+
+    br {
+      display: none;
+    }
+  }
+
+  &:nth-child(1) .image {
+    width: vw(173px);
+    height: vw(285px);
+    right: vw(78px);
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include breakpoint-max('phone') {
+      top: 0;
+      width: 173px;
+      height: 285px;
+      transform: none;
+    }
+
+    @include breakpoint-min('large') {
+      right: 104px;
+      width: 230px;
+      height: 379px;
+    }
+  }
+
+  &:nth-child(2) .image {
+    width: vw(235px);
+    height: vw(230px);
+    right: vw(48px);
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include breakpoint-max('phone') {
+      transform: none;
+      top: 30px;
+      width: 235px;
+      height: 230px;
+    }
+
+    @include breakpoint-min('large') {
+      width: 313px;
+      height: 306px;
+      right: 64px;
+    }
+  }
+
+  &:nth-child(3) .image {
+    width: vw(259px);
+    height: vw(201px);
+    right: vw(42px);
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include breakpoint-max('phone') {
+      bottom: auto;
+      transform: none;
+      top: 35px;
+      width: 259px;
+      height: 201px;
+    }
+
+    @include breakpoint-min('large') {
+      width: 345px;
+      height: 268px;
+      right: 56px;
+    }
+  }
+}

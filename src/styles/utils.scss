@@ -1,0 +1,42 @@
+@use 'sass:math';
+@use './breakpoints';
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint-max($breakpoint) {
+  @if map-has-key(breakpoints.$max, $breakpoint) {
+    @media (max-width: map-get(breakpoints.$max, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unavailable breakpoint #{$breakpoint}";
+  }
+}
+
+@mixin breakpoint-min($breakpoint) {
+  @if map-has-key(breakpoints.$min, $breakpoint) {
+    @media (min-width: map-get(breakpoints.$min, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unavailable breakpoint #{$breakpoint}";
+  }
+}
+
+$base-width: 1440px;
+
+@function vw($px) {
+  @return ($px / $base-width) * 100vw;
+}

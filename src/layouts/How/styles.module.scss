@@ -1,0 +1,154 @@
+@import '@/styles/variables';
+@import '@/styles/utils';
+
+.base {
+  padding: vw(80px) 0;
+  position: relative;
+  z-index: 1;
+
+  @include breakpoint-max('phone') {
+    padding: 76px 0 60px;
+  }
+
+  @include breakpoint-min('large') {
+    padding: 107px 0;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0 0 vw(20px);
+  text-align: center;
+  color: #01387c;
+
+  @include breakpoint-max('phone') {
+    margin: 0 auto 16px;
+    width: 305px;
+    max-width: 100%;
+  }
+
+  @include breakpoint-min('large') {
+    margin-bottom: 27px;
+  }
+}
+
+.text {
+  margin: 0 auto vw(48px);
+  width: vw(631px);
+  max-width: 100%;
+  color: #01387c;
+  text-align: center;
+
+  @include breakpoint-min('large') {
+    margin-bottom: 64px;
+    width: 842px;
+  }
+
+  @include breakpoint-max('phone') {
+    width: 327px;
+    margin-bottom: 32px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: vw(20px);
+
+  @include breakpoint-max('phone') {
+    grid-template-columns: 100%;
+    gap: 12px;
+  }
+
+  @include breakpoint-min('large') {
+    gap: 27px;
+  }
+}
+
+.item {
+  position: relative;
+  padding: vw(324px) vw(84px) vw(48px) vw(40px);
+  border-radius: vw(38px);
+  background: #01387c;
+
+  @include breakpoint-max('phone') {
+    padding: 306px 35px 32px 24px;
+    border-radius: 38px;
+  }
+
+  @include breakpoint-min('large') {
+    padding: 432px 112px 64px 54px;
+    border-radius: 51px;
+  }
+
+  @include hover {
+    .images img {
+      &:nth-child(2) {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.images {
+  position: absolute;
+  inset: 0;
+
+  img {
+    transition: opacity 0.7s;
+    border-radius: vw(38px);
+    object-fit: cover;
+    object-position: center top;
+
+    @include breakpoint-max('phone') {
+      border-radius: 38px;
+    }
+
+    @include breakpoint-min('large') {
+      border-radius: 51px;
+    }
+
+    &:nth-child(1) {
+      @include breakpoint-max('phone') {
+        display: none;
+      }
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+      z-index: 1;
+
+      @include breakpoint-max('phone') {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.subtitle,
+.subtext {
+  position: relative;
+  z-index: 1;
+}
+
+.subtitle {
+  margin: 0 0 vw(12px);
+  color: #faf8e9;
+
+  @include breakpoint-max('phone') {
+    margin-bottom: 12px;
+  }
+
+  @include breakpoint-min('large') {
+    margin-bottom: 16px;
+  }
+}
+
+.subtext {
+  margin: 0;
+  color: #faf8e9;
+}

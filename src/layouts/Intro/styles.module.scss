@@ -1,0 +1,120 @@
+@import '@/styles/variables';
+@import '@/styles/utils';
+
+.base {
+  padding: vw(7px) 0 vw(80px);
+
+  @include breakpoint-max('phone') {
+    padding: 92px 0 24px;
+    overflow: hidden;
+  }
+
+  @include breakpoint-min('large') {
+    padding: 28px 0 107px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.video {
+  width: 100%;
+  height: vw(368px);
+  margin: 0 0 vw(14px);
+  display: flex;
+  justify-content: center;
+
+  @include breakpoint-max('phone') {
+    height: 215px;
+    margin-bottom: 27px;
+  }
+
+  @include breakpoint-min('large') {
+    height: calc(var(--vw, 1vw) * 25.5);
+    margin-bottom: 27px;
+  }
+}
+
+.videoDesktop,
+.videoMobile {
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+}
+
+.videoDesktop {
+  height: vw(810px);
+  width: vw(1440px);
+  top: vw(30px);
+
+  @include breakpoint-max('phone') {
+    display: none;
+  }
+
+  @include breakpoint-min('large') {
+    height: calc(var(--vw, 1vw) * 56.25);
+    width: auto;
+    // top: calc(var(--vw, 1vw) * 3);
+  }
+
+  @include breakpoint-min('4k') {
+    top: calc(var(--vw, 1vw) * -0.5);
+  }
+
+  @media (min-width: 4201px) {
+    top: calc(var(--vw, 1vw) * -2);
+  }
+}
+
+.videoMobile {
+  width: calc(var(--vw, 1vw) * 100);
+  max-width: 766px;
+  height: 446px;
+  top: 70px;
+  object-position: center top;
+  object-fit: none;
+
+  @include breakpoint-min('phone') {
+    display: none;
+  }
+}
+
+.title {
+  width: vw(715px);
+  max-width: 100%;
+  margin: 0 0 vw(24px);
+  position: relative;
+  z-index: 1;
+
+  @include breakpoint-max('phone') {
+    margin-bottom: 16px;
+    width: 361px;
+  }
+
+  @include breakpoint-min('large') {
+    width: 953px;
+    margin-bottom: 32px;
+  }
+}
+
+.text {
+  width: vw(491px);
+  max-width: 100%;
+  margin: 0 0 vw(40px);
+  position: relative;
+  z-index: 1;
+
+  @include breakpoint-max('phone') {
+    width: 361px;
+    margin-bottom: 40px;
+  }
+
+  @include breakpoint-min('large') {
+    width: 655px;
+    margin-bottom: 54px;
+  }
+}

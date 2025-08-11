@@ -1,0 +1,341 @@
+@import '@/styles/variables';
+@import '@/styles/utils';
+
+.button {
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+  border: none;
+  background: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.size-46 {
+  height: vw(46px);
+  border-radius: vw(333px);
+  font-size: vw(14px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 157%;
+  letter-spacing: vw(-0.56px);
+  position: relative;
+  color: #faf8e9;
+  transition:
+    background 0.3s,
+    color 0.3s;
+
+  @include breakpoint-max('phone') {
+    height: 40px;
+    border-radius: 333px;
+    font-size: 14px;
+    letter-spacing: -0.56px;
+  }
+
+  @include breakpoint-min('large') {
+    height: 62px;
+    border-radius: 444px;
+    font-size: 19px;
+    letter-spacing: -0.7px;
+  }
+
+  &.variant-blue {
+    background: #01387c;
+    color: #faf8e9;
+
+    @include hover {
+      background: #f1c67c;
+      color: #01387c;
+    }
+
+    &:active {
+      background: #dfb771;
+      color: #01387c;
+    }
+  }
+
+  .bg {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #01387c;
+    border-radius: inherit;
+    overflow: hidden;
+  }
+
+  .bg::before,
+  .bg::after {
+    content: '';
+    position: absolute;
+    background: #f1c67c;
+    transition: background 0.3s;
+  }
+
+  .bg::before {
+    width: 110%;
+    height: 0;
+    padding-bottom: 110%;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 1);
+  }
+
+  .bg::after {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition:
+      opacity 0.3s,
+      background 0.3s;
+  }
+
+  span:not(.bg) {
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+
+  @include hover {
+    .bg::before {
+      transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+      transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
+    }
+
+    .bg::after {
+      opacity: 1;
+      transition-duration: 0.01s;
+      transition-delay: 0.3s;
+    }
+  }
+
+  &:active {
+    .bg::before,
+    .bg::after {
+      transition-delay: 0 !important;
+      transition-duration: 0.3s !important;
+      background: #dfb771;
+    }
+  }
+}
+
+.size-66 {
+  position: relative;
+  height: vw(66px);
+  overflow: hidden;
+  padding: 0 vw(82px) 0 vw(32px);
+  border-radius: vw(333px);
+
+  font-family: $inter;
+  font-size: vw(16px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: vw(-0.64px);
+
+  @include breakpoint-max('phone') {
+    height: 66px;
+    padding: 0 82px 0 32px;
+    border-radius: 333px;
+    font-size: 16px;
+    letter-spacing: -0.64px;
+  }
+
+  @include breakpoint-min('large') {
+    height: 88px;
+    padding: 0 110px 0 43px;
+    font-size: 21px;
+    border-radius: 444px;
+    letter-spacing: -0.85px;
+  }
+
+  .box {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    width: vw(66px);
+    overflow: hidden;
+    transition:
+      width 0.5s,
+      height 0.5s;
+    will-change: width, height;
+
+    @include breakpoint-max('phone') {
+      width: 66px;
+    }
+
+    @include breakpoint-min('large') {
+      width: 89px;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: vw(8px);
+      left: vw(8px);
+      border-radius: 50%;
+      top: 50%;
+      height: calc(100% - vw(16px));
+      transform: translateY(-50%);
+      transition:
+        transform 0.5s,
+        background 0.3s;
+      will-change: transform;
+
+      @include breakpoint-max('phone') {
+        right: 8px;
+        left: 8px;
+        height: calc(100% - 16px);
+      }
+
+      @include breakpoint-min('large') {
+        right: 11px;
+        left: 11px;
+        height: calc(100% - 22px);
+      }
+    }
+  }
+
+  .text {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    right: vw(82px);
+    white-space: nowrap;
+    transform: translateY(-50%);
+
+    @include breakpoint-max('phone') {
+      right: 82px;
+    }
+
+    @include breakpoint-min('large') {
+      right: 110px;
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    z-index: 1;
+    width: vw(50px);
+    height: vw(50px);
+    right: vw(8px);
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint-max('phone') {
+      width: 50px;
+      height: 50px;
+      right: 8px;
+    }
+
+    @include breakpoint-min('large') {
+      width: 67px;
+      height: 67px;
+      right: 11px;
+    }
+
+    svg {
+      position: relative;
+      z-index: 1;
+      width: vw(20px);
+      height: vw(20px);
+
+      @include breakpoint-max('phone') {
+        width: 20px;
+        height: 20px;
+      }
+
+      @include breakpoint-min('large') {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+
+  @include hover {
+    .box {
+      width: vw(300px);
+      height: vw(230px);
+
+      @include breakpoint-max('phone') {
+        width: 300px;
+        height: 230px;
+      }
+
+      @include breakpoint-min('large') {
+        width: 399px;
+        height: 306px;
+      }
+
+      &:after {
+        transform: translate(vw(10px), -50%);
+
+        @include breakpoint-max('phone') {
+          transform: translate(10px, -50%);
+        }
+
+        @include breakpoint-min('large') {
+          transform: translate(14px, -50%);
+        }
+      }
+    }
+  }
+
+  &.variant-blue {
+    background: #01387c;
+    color: #faf8e9;
+
+    .box:after {
+      background: #f1c67c;
+    }
+
+    .text {
+      color: #01387c;
+    }
+
+    .arrow {
+      color: #01387c;
+    }
+
+    &:active .box:after {
+      background: #dfb771;
+    }
+  }
+
+  &.variant-white {
+    background: #faf8e9;
+    color: #01387c;
+
+    .box:after {
+      background: #f1c67c;
+    }
+
+    .text {
+      color: #01387c;
+    }
+
+    .arrow {
+      color: #01387c;
+    }
+
+    &:active .box:after {
+      background: #dfb771;
+    }
+  }
+}

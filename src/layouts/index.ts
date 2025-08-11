@@ -1,0 +1,6 @@
+export * from './Intro/Intro'
+export * from './How/How'
+export * from './Powered/Powered'
+export * from './Why/Why'
+export * from './Flow/Flow'
+export * from './FAQ/FAQ'

@@ -1,0 +1,19 @@
+@import '@/styles/variables';
+@import '@/styles/utils';
+
+.base {
+  width: vw(1320px);
+  max-width: calc(100% - vw(120px));
+  margin-left: auto;
+  margin-right: auto;
+
+  @include breakpoint-max('phone') {
+    max-width: calc(100% - 30px);
+    width: 450px;
+  }
+
+  @include breakpoint-min('large') {
+    width: 1760px;
+    max-width: calc(100% - 160px);
+  }
+}
