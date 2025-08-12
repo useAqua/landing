@@ -29,8 +29,9 @@
   justify-content: center;
 
   @include breakpoint-max('phone') {
-    height: 215px;
+    height: calc(var(--vw, 1vw) * 57.3);
     margin-bottom: 27px;
+    position: relative;
   }
 
   @include breakpoint-min('large') {
@@ -49,7 +50,7 @@
 .videoDesktop {
   height: vw(810px);
   width: vw(1440px);
-  top: vw(30px);
+  top: vw(15px);
 
   @include breakpoint-max('phone') {
     display: none;
@@ -58,7 +59,6 @@
   @include breakpoint-min('large') {
     height: calc(var(--vw, 1vw) * 56.25);
     width: auto;
-    // top: calc(var(--vw, 1vw) * 3);
   }
 
   @include breakpoint-min('4k') {
@@ -72,11 +72,8 @@
 
 .videoMobile {
   width: calc(var(--vw, 1vw) * 100);
-  max-width: 766px;
-  height: 446px;
-  top: 70px;
-  object-position: center top;
-  object-fit: none;
+  height: auto;
+  top: 0;
 
   @include breakpoint-min('phone') {
     display: none;
