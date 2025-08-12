@@ -1,7 +1,12 @@
 import { Fragment } from 'react'
 import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 
-import { How, Intro, Powered, Why, Flow, FAQ } from '@/layouts'
+import { How, Intro, Powered, Why, FAQ } from '@/layouts'
+
+const FlowComponentWithNoSSR = dynamic(() => import('../layouts/Flow/Flow'), {
+  ssr: false,
+})
 
 export const metadata: Metadata = {
   title: 'Aqua landing',
@@ -15,7 +20,7 @@ export default function Page() {
       <How />
       <Powered />
       <Why />
-      <Flow />
+      <FlowComponentWithNoSSR />
       <FAQ />
     </Fragment>
   )

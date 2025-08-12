@@ -7,7 +7,7 @@ import { Button, Container, Heading, Text } from '@/components'
 
 import styles from './styles.module.scss'
 
-export const Flow: React.FC = () => {
+const Flow: React.FC = () => {
   const lottieRef = React.useRef<any>(null)
   const ref = React.useRef<HTMLDivElement>(null)
   const played = React.useRef(false)
@@ -62,3 +62,5 @@ export const Flow: React.FC = () => {
     </Container>
   )
 }
+
+export default Flow
