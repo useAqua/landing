@@ -2,6 +2,8 @@
 
 import * as React from 'react'
 import { Element } from 'react-scroll'
+import { useRevealConfig } from '@/hooks'
+import { RevealList, RevealWrapper } from 'next-reveal'
 
 import { Button, Container, Glyph, Heading, Icon, Text } from '@/components'
 
@@ -26,20 +28,34 @@ const links = [
 ]
 
 export const Powered: React.FC = () => {
+  const reveal = useRevealConfig()
+
+  if (!reveal) {
+    return null
+  }
+
   return (
     <Element name="vaults">
       <section className={styles.base}>
         <Container className={styles.container}>
-          <Heading element="h2" className={styles.title}>
-            Powered by real-time liquidity <br />
-            <b>Built for speed and efficiency.</b>
-          </Heading>
-          <Text variant={400} className={styles.text}>
-            Aqua vaults are designed to grow your capital while fueling
-            liquidity across MegaETH. Strategies adapt in real-time to market
-            conditions, volume flows, and yield opportunities.
-          </Text>
-          <div className={styles.list}>
+          <RevealWrapper {...reveal.revealConfig}>
+            <Heading element="h2" className={styles.title}>
+              Powered by real-time liquidity <br />
+              <b>Built for speed and efficiency.</b>
+            </Heading>
+          </RevealWrapper>
+          <RevealWrapper {...reveal.revealConfig}>
+            <Text variant={400} className={styles.text}>
+              Aqua vaults are designed to grow your capital while fueling
+              liquidity across MegaETH. Strategies adapt in real-time to market
+              conditions, volume flows, and yield opportunities.
+            </Text>
+          </RevealWrapper>
+          <RevealList
+            {...reveal.revealConfig}
+            interval={100}
+            className={styles.list}
+          >
             {links.map((item, index) => (
               <a href={item.link} key={index} className={styles.item}>
                 <span className={styles.icon}>
@@ -49,10 +65,12 @@ export const Powered: React.FC = () => {
                 <Icon glyph={'ArrowUp'} className={styles.arrow} />
               </a>
             ))}
-          </div>
-          <Button size={66} variant="blue">
-            Explore all vaults
-          </Button>
+          </RevealList>
+          <RevealWrapper {...reveal.revealConfig}>
+            <Button size={66} variant="blue">
+              Explore all vaults
+            </Button>
+          </RevealWrapper>
         </Container>
       </section>
     </Element>

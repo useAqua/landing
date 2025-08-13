@@ -11,6 +11,8 @@ import Card1 from '@public/section-why/card1.webp'
 import Card2 from '@public/section-why/card2.webp'
 import Card3 from '@public/section-why/card3.webp'
 import Image from 'next/image'
+import { useRevealConfig } from '@/hooks'
+import { RevealList, RevealWrapper } from 'next-reveal'
 
 const content = [
   {
@@ -53,14 +55,26 @@ const content = [
 ]
 
 export const Why: React.FC = () => {
+  const reveal = useRevealConfig()
+
+  if (!reveal) {
+    return null
+  }
+
   return (
     <Element name="why">
       <section className={styles.base}>
         <Container>
-          <Heading element="h2" className={styles.title}>
-            Why Choose <b>Aqua</b>
-          </Heading>
-          <div className={styles.list}>
+          <RevealWrapper {...reveal.revealConfig}>
+            <Heading element="h2" className={styles.title}>
+              Why Choose <b>Aqua</b>
+            </Heading>
+          </RevealWrapper>
+          <RevealList
+            {...reveal.revealConfig}
+            interval={100}
+            className={styles.list}
+          >
             {content.map((item, index) => (
               <div className={styles.item} key={index}>
                 <div className={styles.count}>( {index + 1} )</div>
@@ -81,7 +95,7 @@ export const Why: React.FC = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </RevealList>
         </Container>
       </section>
     </Element>

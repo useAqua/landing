@@ -3,6 +3,9 @@
 import * as React from 'react'
 import { Element } from 'react-scroll'
 
+import { useRevealConfig } from '@/hooks'
+import { RevealWrapper } from 'next-reveal'
+
 import { Container, Heading, Text } from '@/components'
 
 import styles from './styles.module.scss'
@@ -48,21 +51,36 @@ const content = [
   },
 ]
 export const How: React.FC = () => {
+  const reveal = useRevealConfig()
+
+  if (!reveal) {
+    return null
+  }
+
   return (
     <Element name="how">
       <section className={styles.base}>
         <Container className={styles.container}>
-          <Heading element="h2" className={styles.title}>
-            How <b>Aqua</b> Powers Liquidity
-          </Heading>
-          <Text variant={400} className={styles.text}>
-            Aqua connects your deposits with the most active markets and
-            protocols on MegaETH. Your assets stay productive, supporting volume
-            and liquidity in real time.
-          </Text>
+          <RevealWrapper {...reveal.revealConfig}>
+            <Heading element="h2" className={styles.title}>
+              How <b>Aqua</b> Powers Liquidity
+            </Heading>
+          </RevealWrapper>
+          <RevealWrapper {...reveal.revealConfig}>
+            <Text variant={400} className={styles.text}>
+              Aqua connects your deposits with the most active markets and
+              protocols on MegaETH. Your assets stay productive, supporting
+              volume and liquidity in real time.
+            </Text>
+          </RevealWrapper>
           <div className={styles.grid}>
             {content.map((item, index) => (
-              <div className={styles.item} key={index}>
+              <RevealWrapper
+                {...reveal.revealConfigWithInterval}
+                delay={100 * index}
+                className={styles.item}
+                key={index}
+              >
                 <div className={styles.images}>
                   <Image
                     src={item.image}
@@ -85,7 +103,7 @@ export const How: React.FC = () => {
                 <Text variant={400} className={styles.subtext}>
                   {item.text}
                 </Text>
-              </div>
+              </RevealWrapper>
             ))}
           </div>
         </Container>
