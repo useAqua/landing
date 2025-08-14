@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
       <div className={styles.row}>
         <Container className={styles.container}>
           <Text variant={400} className={styles.copyright}>
-            © 2025 Aqua Protocol
+            © 2025 Aqua
           </Text>
           <div className={styles.socials}>
             {socials.map((item, index) => (
