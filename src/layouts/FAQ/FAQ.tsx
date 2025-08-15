@@ -31,7 +31,7 @@ const content = [
     ),
     answer: (
       <>
-        Yes. Your assets stay in onchain smart contracts and can be withdrawn
+        Yes. Your assets stay in on-chain smart contracts and can be withdrawn
         anytime.
       </>
     ),
@@ -65,8 +65,7 @@ const content = [
     ),
     answer: (
       <>
-        No. Aqua is focused on providing core liquidity services without a
-        native token
+        No native token yet. Future developments will be communicated through official channels.
       </>
     ),
   },
