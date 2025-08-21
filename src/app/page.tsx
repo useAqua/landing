@@ -9,8 +9,8 @@ const FlowComponentWithNoSSR = dynamic(() => import('../layouts/Flow/Flow'), {
 })
 
 export const metadata: Metadata = {
-  title: 'Aqua landing',
-  description: 'Page description',
+  title: 'Aqua',
+  description: "MegaETH's liquidity and yield coordination layer.",
 }
 
 export default function Page() {
