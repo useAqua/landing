@@ -65,7 +65,8 @@ const content = [
     ),
     answer: (
       <>
-        No native token yet. Future developments will be communicated through official channels.
+        No native token yet. Future developments will be communicated through
+        official channels.
       </>
     ),
   },
