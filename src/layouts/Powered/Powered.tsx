@@ -6,6 +6,7 @@ import { useRevealConfig } from '@/hooks'
 import { RevealList, RevealWrapper } from 'next-reveal'
 
 import { Button, Container, Glyph, Heading, Icon, Text } from '@/components'
+import { LAUNCH_APP_LINK } from '@/common'
 
 import styles from './styles.module.scss'
 
@@ -67,7 +68,7 @@ export const Powered: React.FC = () => {
             ))}
           </RevealList>
           <RevealWrapper {...reveal.revealConfig}>
-            <Button size={66} variant="blue">
+            <Button as="a" href={LAUNCH_APP_LINK} size={66} variant="blue">
               Get Access {/* Launch App */}
             </Button>
           </RevealWrapper>
