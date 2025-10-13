@@ -68,7 +68,7 @@ export const Powered: React.FC = () => {
           </RevealList>
           <RevealWrapper {...reveal.revealConfig}>
             <Button size={66} variant="blue">
-              Explore all vaults
+              Get Access {/* Launch App */}
             </Button>
           </RevealWrapper>
         </Container>

@@ -4,6 +4,7 @@ import * as React from 'react'
 import { Player } from '@lottiefiles/react-lottie-player'
 
 import { Button, Container, Heading, Text } from '@/components'
+import { LAUNCH_APP_LINK } from '@/common'
 
 import styles from './styles.module.scss'
 
@@ -48,8 +49,8 @@ const Flow: React.FC = () => {
         Aqua vaults keep capital actively allocated to the most reliable and
         rewarding strategies
       </Text>
-      <Button size={66} variant="white">
-        Start Earning
+      <Button as="a" href={LAUNCH_APP_LINK} size={66} variant="white">
+        Join Waitlist{/* Start Earning */}
       </Button>
       <div className={styles.image} ref={ref}>
         <Player

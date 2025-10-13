@@ -5,6 +5,7 @@ import { RevealWrapper } from 'next-reveal'
 import { useRevealConfig } from '@/hooks'
 
 import { Button, Container, Heading, Text } from '@/components'
+import { LAUNCH_APP_LINK } from '@/common'
 
 import styles from './styles.module.scss'
 
@@ -48,8 +49,8 @@ export const Intro: React.FC = () => {
           </Text>
         </RevealWrapper>
         <RevealWrapper {...reveal?.revealConfigWithInterval} delay={300}>
-          <Button size={66} variant="blue">
-            Launch App
+          <Button as="a" size={66} variant="blue" href={LAUNCH_APP_LINK}>
+            Join Waitlist {/* Launch App */}
           </Button>
         </RevealWrapper>
       </Container>

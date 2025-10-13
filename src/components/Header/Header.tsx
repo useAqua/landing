@@ -68,7 +68,7 @@ const Header = ({ className }: HeaderProps) => {
             variant={'blue'}
             className={styles.button}
           >
-            Launch App
+            Join Waitlist {/* Launch App */}
           </Button>
           <button
             className={styles.burger}

@@ -1,4 +1,4 @@
-export const LAUNCH_APP_LINK = '#'
+export const LAUNCH_APP_LINK = 'https://tally.so/r/wgKlLK'
 export const socials = [
   {
     title: 'X',
