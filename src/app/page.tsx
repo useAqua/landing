@@ -10,10 +10,12 @@ const FlowComponentWithNoSSR = dynamic(() => import('../layouts/Flow/Flow'), {
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://useaqua.xyz'),
   title: 'Aqua',
   description: "MegaETH's liquidity and yield coordination layer.",
   openGraph: {
     title: 'Aqua',
+    siteName: 'Aqua',
     description: "MegaETH's liquidity and yield coordination layer.",
     type: 'website',
     images: [
